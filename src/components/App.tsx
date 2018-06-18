@@ -61,7 +61,11 @@ export class App extends React.Component<{}, IState> {
                         placeholder="Add a Task" 
                         value={ this.state.currentTask } 
                         onChange={e => this.setState({ currentTask: e.target.value })}/>
-                    <button type="submit">Add Task</button>
+                    <button 
+                        type="submit"
+                        disabled={ this.state.currentTask == ""}
+                    >Add Task
+                    </button>
                 </form>
                 <section>{ this.renderTasks() }</section>
             </div>
